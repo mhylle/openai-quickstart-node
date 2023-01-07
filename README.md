@@ -1,41 +1,41 @@
-# OpenAI API Quickstart - Node.js example app
+# Running Pet Name Generator App used in OpenAI API using Docker
 
 This is an example pet name generator app used in the OpenAI API [quickstart tutorial](https://beta.openai.com/docs/quickstart). It uses the [Next.js](https://nextjs.org/) framework with [React](https://reactjs.org/). Check out the tutorial or follow the instructions below to get set up.
 
 ## Setup
 
-1. If you don’t have Node.js installed, [install it from here](https://nodejs.org/en/)
+## Prereq
 
-2. Clone this repository
+- Docker Desktop 4.15
 
-3. Navigate into the project directory
 
-   ```bash
-   $ cd openai-quickstart-node
-   ```
+1. Clone this repository
 
-4. Install the requirements
+```
+git clone https://github.com/ajeetraina/openai-quickstart-node
+```
 
-   ```bash
-   $ npm install
-   ```
+2. Open app.js file and add API Keys
 
-5. Make a copy of the example environment variables file
 
-   On Linux systems: 
-   ```bash
-   $ cp .env.example .env
-   ```
-   On Windows:
-   ```powershell
-   $ copy .env.example .env
-   ```
-6. Add your [API key](https://beta.openai.com/account/api-keys) to the newly created `.env` file
+```
+const openai = require('openai');
 
-7. Run the app
+// Set your OpenAI API key
+openai.apiKey = "YOUR_API_KEY";
+```
 
-   ```bash
-   $ npm run dev
-   ```
 
-You should now be able to access the app at [http://localhost:3000](http://localhost:3000)! For the full context behind this example app, check out the [tutorial](https://beta.openai.com/docs/quickstart).
+3. Building the Chat GPT Docker Image
+
+```
+docker build -t ajeetraina/chatgpt-docker .
+```
+
+4. Running the Chat GPT container
+
+```
+docker run -d -p 8080:8080 ajeetraina/chatgpt-docker
+```
+
+You should now be able to access the app at [http://localhost:3000](http://localhost:3000)
