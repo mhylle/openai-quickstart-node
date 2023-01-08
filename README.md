@@ -29,13 +29,13 @@ openai.apiKey = "YOUR_API_KEY";
 3. Building the Chat GPT Docker Image
 
 ```
-docker build -t ajeetraina/chatgpt-docker .
+docker build -t ajeetraina/chatbot-docker .
 ```
 
-4. Running the Chat GPT container
+4. Running the Chatbot container
 
 ```
-docker run -d -p 8080:8080 ajeetraina/chatgpt-docker
+docker run -d -p 8080:8080 ajeetraina/chatbot-docker
 ```
 
 You should now be able to access the app at [http://localhost:3000](http://localhost:3000)
